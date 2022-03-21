@@ -7,6 +7,9 @@
     "dev": "nodemon index",
     "start": "node index"
   },
+  "engines":{
+    "node": "16.14.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Abhijit-Mondal/personal-expense-tracker.git"
