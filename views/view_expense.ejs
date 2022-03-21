@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %>
+
+    <!-- content -->
+    <% if(expenses.length !== 0) { %>
+    <ul>
+        <% expenses.forEach((expense)=>{ %>
+            <li>
+                <h4><%= expense.category %></h4>
+                <h6>&#8377 <%= expense.amount %></h6>
+                <h6><%= expense.date.toString() %></h6>
+            </li>
+            <hr>
+        <% }); %>
+    </ul>
+    <% } %>
+
+<%- include("partials/footer.ejs") %>

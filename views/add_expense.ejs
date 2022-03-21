@@ -1,0 +1,14 @@
+<%- include("partials/header.ejs") %>
+
+    <!-- content -->
+    <form action="/api/expenses" method="POST">
+        <label for="category">EXPENSE FOR: </label>
+        <input type="text" placeholder="category" name="category" id="category">
+        <label for="amount">HOW MUCH: </label>
+        <input type="number" placeholder="amount" name="amount" id="amount">
+        <label for="date">DATE: </label>
+        <input type="date" name="date" id="date">
+        <input type="submit" value="ADD EXPENSE">
+    </form>
+
+<%- include("partials/footer.ejs") %>

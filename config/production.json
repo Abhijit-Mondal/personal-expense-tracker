@@ -1,0 +1,6 @@
+{
+    "name": "Expense Tracker - Prod environment",
+    "mail": {
+        "host":"prod-mail-server"
+    }
+}
