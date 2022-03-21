@@ -39,7 +39,7 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => { 
     try {
         const result = await createExpense(req.body);
-        res.redirect("/view");
+        res.redirect("/api/expenses/view");
     }
     catch (err) {
         dbDebugger(err);
