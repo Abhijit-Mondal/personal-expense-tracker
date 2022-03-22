@@ -1,13 +1,12 @@
 # personal-exprense-tracker
+A suite of applications to track, study and plan personal expenses.
 
-A java application for tracking expenses
+# Technologies:
+- Web: Node.js and Express, MongoDB and Mongoose, Bootstrap
+- Desktop: JavaFX 
+- Mobile: Android
 
-# Technologies to use:
-
-Java, Node.js, PostgreSQL
-
-# A REST API
-
-# A desktop application (based on JavaFX)
-
-# An android application
+# Checkpoints:
+- A node based web application: https://personal-expense-tracker-v1.herokuapp.com/
+- A desktop application (based on JavaFX)
+- An android application
