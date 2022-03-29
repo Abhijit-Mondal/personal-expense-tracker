@@ -4,10 +4,8 @@ const mongoose = require("mongoose");
 
 const expenseSchema = new mongoose.Schema({
     category: {
-        type: String, 
-        required: true,
-        lowercase: true,
-        trim: true
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Category"
     },
     amount: {
         type: mongoose.Decimal128,
@@ -24,7 +22,7 @@ const Expense = mongoose.model("Expense", expenseSchema);
 
 // Get all expenses
 async function getExpenses() {
-    const expenses = await Expense.find().sort("date");
+    const expenses = await Expense.find().populate("category", "name color -_id").sort("date");
     dbDebugger(expenses);
     return expenses;
 }

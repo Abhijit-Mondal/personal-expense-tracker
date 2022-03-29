@@ -4,31 +4,29 @@ const config = require("config");
 const startupDebugger = require("debug")("app:startup");
 const dbDebugger = require("debug")("app:db");
 
-const { createExpense, getExpenses, getExpense, updateExpense, removeExpense } = require("../models/Expense");
-const { getCategories } = require("../models/Category");
+const {createCategory, getCategories, getCategory,  updateCategory, removeCategory } = require("../models/Category");
 
-router.get("/add", async (req, res) => { 
-    const categories = await getCategories();
-    res.render("add_expense", {title: req.url, categories: categories});
+router.get("/add", (req, res) => { 
+    res.render("add_category", {title: req.url});
 });
 
 router.get("/view", async (req, res) => { 
-    const expenses = await getExpenses();
-    res.render("view_expense", {title: req.url, expenses: expenses});
+    const categories = await getCategories();
+    res.render("view_category", {title: req.url, categories: categories});
 });
 
 router.get("/", async (req, res) => {
-    const expenses = await getExpenses();
-    res.status(200).send(expenses);
+    const categories = await getCategories();
+    res.status(200).send(categories);
 });
 
 
 
 router.get("/:id", async (req, res) => { 
     try {
-        const expense = await getExpense(req.params.id);
-        if (expense)
-            res.status(200).send(expense);
+        const category = await getCategory(req.params.id);
+        if (category)
+            res.status(200).send(category);
         else
             res.status(404).json({message: "404 object not found"});
     }
@@ -40,8 +38,8 @@ router.get("/:id", async (req, res) => {
 
 router.post("/", async (req, res) => { 
     try {
-        const result = await createExpense(req.body);
-        res.redirect("/api/expenses/view");
+        const result = await createCategory(req.body);
+        res.redirect("/api/categories/view");
     }
     catch (err) {
         dbDebugger(err);
@@ -51,7 +49,7 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => { 
     try {
-        const result = await updateExpense(req.params.id, req.body);
+        const result = await updateCategory(req.params.id, req.body);
         res.status(200).send(result);
     }
     catch (err) {
@@ -62,7 +60,7 @@ router.put("/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
     try {
-        const result = await removeExpense(req.params.id);
+        const result = await removeCategory(req.params.id);
         if (result)
             res.status(200).send(result);
         else

@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs") %>
+
+<!-- content -->
+<form action="/api/categories" method="POST">
+	<label for="name">CATEGORY NAME: </label>
+	<input type="text" id="name" name="name" placeholder="category name">
+	<label for="color">COLOR: </label>
+	<input type="color" name="color" id="color">
+	<input type="submit" value="ADD EXPENSE" />
+</form>
+
+<%- include("partials/footer.ejs") %>

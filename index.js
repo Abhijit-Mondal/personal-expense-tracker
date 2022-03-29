@@ -37,7 +37,7 @@ app.set("view engine", "ejs");
 // Database
 const mongoose = require("mongoose");
 mongoose.connect(process.env.DATABASE_URI)
-    .then(() => dbDebugger("Connected to MongoDB database"))
+    .then(() => dbDebugger("Connected to MongoDB database at:", process.env.DATABASE_URI))
     .catch(err => dbDebugger("Error while connecting to MongoDB database", err));
 
 
@@ -46,7 +46,8 @@ const homeRoute = require("./routes/home");
 app.use("/", homeRoute);
 const expenseRoutes = require("./routes/expenses");
 app.use("/api/expenses", expenseRoutes);
-
+const categoryRoutes = require("./routes/categories");
+app.use("/api/categories", categoryRoutes);
 
 // Listener
 const port = process.env.PORT || 3000;

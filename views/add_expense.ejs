@@ -2,8 +2,12 @@
 
 <!-- content -->
 <form action="/api/expenses" method="POST">
-	<label for="category">EXPENSE FOR: </label>
-	<input type="text" placeholder="category" name="category" id="category" />
+	<label for="categoryName">EXPENSE FOR: </label>
+	<select name="category" id="categoryName">
+		<% categories.forEach((category)=>{ %>
+			<option value="<%= category._id %>"><%= category.name %></option>
+		<% }); %>
+	</select>
 	<label for="amount">HOW MUCH: </label>
 	<input
 		type="number"

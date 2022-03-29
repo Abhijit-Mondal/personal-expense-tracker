@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %>
+
+    <!-- content -->
+    <% if(categories.length !== 0) { %>
+    <ul>
+        <% categories.forEach((category)=>{ %>
+            <li>
+                <h4><%= category.name %></h4>
+                <h6><%= category.color %></h6>
+            </li>
+            <hr>
+        <% }); %>
+    </ul>
+    <% } %>
+
+<%- include("partials/footer.ejs") %>
