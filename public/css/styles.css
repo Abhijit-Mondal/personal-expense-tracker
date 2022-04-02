@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -16,9 +17,8 @@ body{
 
 
 /* Header */
-header{
-    /* border: 1px solid black; */
-}
+/* header{
+} */
 
 /* Navbar */
 #navbar {
@@ -121,7 +121,6 @@ footer{
     margin-top: 0.5rem;
     position: relative;
     width: 100%;
-    box-sizing: border-box;
     bottom: 0;
     text-align: center;
 }
