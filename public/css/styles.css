@@ -9,6 +9,7 @@ body{
 }
 
 #container{
+    min-height: 100vh;
     width:90%;
     margin:auto;
 }
@@ -117,8 +118,9 @@ footer{
     background-color: #000;
     color: #fff;
     padding: 0.5rem;
-    position: fixed;
-    width: 100vw;
+    margin-top: 0.5rem;
+    position: relative;
+    width: 100%;
     box-sizing: border-box;
     bottom: 0;
     text-align: center;
