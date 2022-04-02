@@ -2,13 +2,13 @@
 
     <!-- content -->
     <% if(categories.length !== 0) { %>
-    <ul id="categories">
+    <div id="categories">
         <% categories.forEach((category)=>{ %>
-            <li class="categoryItem" style="border: 5px solid <%= category.color %>">
+            <div class="categoryItem" style="border: 5px solid <%= category.color %>">
                 <h4><%= category.name %></h4>
-            </li>
+            </div>
         <% }); %>
-    </ul>
+    </div>
     <% } %>
 
 <%- include("partials/footer.ejs") %>
