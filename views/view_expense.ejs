@@ -2,14 +2,13 @@
 
     <!-- content -->
     <% if(expenses.length !== 0) { %>
-    <ul>
+    <ul id="expenses">
         <% expenses.forEach((expense)=>{ %>
-            <li>
-                <h4><%= expense.category %></h4>
+            <li class="expenseItem" style="background-color: <%=expense.category.color%>">
+                <h4><%= expense.category.name %></h4>
                 <h6>&#8377 <%= expense.amount %></h6>
                 <h6><%= expense.date.toString() %></h6>
             </li>
-            <hr>
         <% }); %>
     </ul>
     <% } %>

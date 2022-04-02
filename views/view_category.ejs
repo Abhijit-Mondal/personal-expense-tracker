@@ -2,13 +2,11 @@
 
     <!-- content -->
     <% if(categories.length !== 0) { %>
-    <ul>
+    <ul id="categories">
         <% categories.forEach((category)=>{ %>
-            <li>
+            <li class="categoryItem" style="border: 5px solid <%= category.color %>">
                 <h4><%= category.name %></h4>
-                <h6><%= category.color %></h6>
             </li>
-            <hr>
         <% }); %>
     </ul>
     <% } %>

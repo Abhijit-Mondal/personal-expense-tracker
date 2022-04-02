@@ -4,16 +4,40 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/styles.css">
+        <meta name="description" content="personal expense tracker application">
+        <meta name="keywords" content="expense tracker, finance">
+        <link rel="stylesheet" href="/css/styles.css">
         <script src="js/app.js"></script>
         <title><%= title %></title>
     </head>
     <body>
-        <!-- Content -->    
-        <button><a href="/api/expenses/add">ADD NEW EXPENSE</a></button>
-        <button><a href="/api/expenses/view">VIEW EXPENSES</a></button>
-        <button><a href="/api/categories/add">ADD NEW CATEGORY</a></button>
-        <button><a href="/api/categories/view">VIEW CATEGORIES</a></button>
-        <hr>
+        <div id="container">
+            <header>
+                <h1>Your Personal Expense Tracker</h1>
+            </header>
+    
+            <!--navbar-->
+            <div id="navbar">
+                <div class="nav-item"><a href="/">HOME</a></div>
+                <div class="nav-item"><a href="/api/expenses/add">ADD NEW EXPENSE</a></div>
+                <div class="nav-item"><a href="/api/expenses/view">VIEW EXPENSES</a></div>
+                <div class="nav-item"><a href="/api/categories/add">ADD NEW CATEGORY</a></div>
+                <div class="nav-item"><a href="/api/categories/view">VIEW CATEGORIES</a></div>
+                <!--applying clearfix to counter the float-->
+                <div class="clr"></div>
+            </div><!--end navbar-->
+            
+            
+            <!--main-content-->
+            <div id="main-content">
+
+                <!--aside-->
+                <aside>
+                    <!-- Sidebar Content -->
+                </aside><!--end sidebar-->
+
+        
+
+
 
 

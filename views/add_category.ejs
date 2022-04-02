@@ -1,12 +1,18 @@
 <%- include("partials/header.ejs") %>
 
 <!-- content -->
-<form action="/api/categories" method="POST">
-	<label for="name">CATEGORY NAME: </label>
-	<input type="text" id="name" name="name" placeholder="category name">
-	<label for="color">COLOR: </label>
-	<input type="color" name="color" id="color">
-	<input type="submit" value="ADD EXPENSE" />
+<form action="/api/categories" method="POST" id="addCategoryForm">
+	<div class="form-item">
+		<label for="name">CATEGORY NAME: </label>
+		<input type="text" id="name" name="name" placeholder="category name" required autofocus>
+	</div>
+	<div class="form-item">
+		<label for="color">COLOR: </label>
+		<input type="color" name="color" id="color" required autofocus>
+	</div>
+	<div class="form-item">
+		<input type="submit" value="ADD" />
+	</div>
 </form>
 
 <%- include("partials/footer.ejs") %>

@@ -1,24 +1,34 @@
 <%- include("partials/header.ejs") %>
 
 <!-- content -->
-<form action="/api/expenses" method="POST">
-	<label for="categoryName">EXPENSE FOR: </label>
-	<select name="category" id="categoryName">
-		<% categories.forEach((category)=>{ %>
-			<option value="<%= category._id %>"><%= category.name %></option>
-		<% }); %>
-	</select>
-	<label for="amount">HOW MUCH: </label>
-	<input
-		type="number"
-		placeholder="amount"
-		name="amount"
-		id="amount"
-		step=".01"
-	/>
-	<label for="date">DATE: </label>
-	<input type="date" name="date" id="date" />
-	<input type="submit" value="ADD EXPENSE" />
+<form action="/api/expenses" method="POST" id="addExpenseForm">
+	<div class="form-item">
+		<label for="categoryName">Expense Category </label>
+		<select name="category" id="categoryName" required autofocus >
+			<option value="" selected></option>
+			<% categories.forEach((category)=>{ %>
+				<option value="<%= category._id %>"><%= category.name %></option>
+			<% }); %>
+		</select>
+	</div>
+	<div class="form-item">
+		<label for="amount">Amount </label>
+		<input
+			type="number"
+			placeholder="amount"
+			name="amount"
+			id="amount"
+			step=".01"
+			required autofocus
+		/>
+	</div>
+	<div class="form-item">
+		<label for="date">Date </label>
+		<input type="date" name="date" id="date" required autofocus/>
+	</div>
+	<div class="form-item">
+		<input type="submit" value="ADD" />
+	</div>
 </form>
 
 <%- include("partials/footer.ejs") %>
