@@ -21,6 +21,23 @@ app.use(express.static("public"));
 app.use(logger);
 app.use(authenticator);
 app.use(helmet());
+
+// const contentSecurityPolicy = require("helmet-csp");
+
+// app.use(
+//   contentSecurityPolicy({
+//     useDefaults: true,
+//     directives: {
+//       defaultSrc: ["'self'", "default.example"],
+//       scriptSrc: ["'self'", "fonts.googleapis.com"],
+//       objectSrc: ["'none'"],
+//       upgradeInsecureRequests: [],
+//     },
+//     reportOnly: false,
+//   })
+// );
+
+
 if (process.env.NODE_ENV === "development") {
     startupDebugger("Morgan is enabled");
     app.use(morgan("tiny"));
