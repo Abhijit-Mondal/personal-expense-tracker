@@ -4,7 +4,7 @@ const config = require("config");
 const startupDebugger = require("debug")("app:startup");
 const dbDebugger = require("debug")("app:db");
 
-const { createExpense, getExpenses, getExpense, updateExpense, removeExpense } = require("../models/Expense");
+const { createExpense, getExpenses, getExpense, updateExpense, removeExpense, Expense } = require("../models/Expense");
 const { getCategories } = require("../models/Category");
 
 router.get("/add", async (req, res) => { 
@@ -12,9 +12,10 @@ router.get("/add", async (req, res) => {
     res.render("add_expense", {title: req.url, categories: categories});
 });
 
-router.get("/view", async (req, res) => { 
-    const expenses = await getExpenses();
-    res.render("view_expense", {title: req.url, expenses: expenses});
+router.get("/view/:categoryId", async (req, res) => { 
+    const expenses = await Expense.find({ category: req.params.categoryId }).populate("category");
+    const baseurl = `${req.protocol}://${req.get("host")}${req.baseUrl}`;
+    res.render("view_expense", {title: expenses[0].category.name, baseurl: baseurl, expenses: expenses});
 });
 
 router.get("/", async (req, res) => {
@@ -41,7 +42,7 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => { 
     try {
         const result = await createExpense(req.body);
-        res.redirect("/api/expenses/view");
+        res.redirect("/");
     }
     catch (err) {
         dbDebugger(err);

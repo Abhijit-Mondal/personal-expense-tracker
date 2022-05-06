@@ -1,5 +1,19 @@
 <%- include("partials/header.ejs") %>
 
     <!-- Content -->
+    <h3>Expense Summary</h3>
+    <hr>
+    <% if(expenseSumByCategories.length !== 0) { %>
+        <div id="categories">
+            <% expenseSumByCategories.forEach((entry)=>{ %>
+                <div class="categoryItem" style="background-color: <%= entry.color %>">
+                    <a href="/api/expenses/view/<%= entry.category_id %>">
+                        <h4><%= entry._id[0] %></h4>
+                        <h4>&#8377; <%= entry.totalExpense %></h4>
+                    </a>
+                </div>
+            <% }); %>
+        </div>
+    <% } %>
 
 <%- include("partials/footer.ejs") %>

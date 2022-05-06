@@ -87,4 +87,4 @@ function validateExpense(expense) {
 }
 
 
-module.exports = { createExpense, getExpenses, getExpense,  updateExpense, removeExpense };
+module.exports = { createExpense, getExpenses, getExpense, updateExpense, removeExpense, Expense };

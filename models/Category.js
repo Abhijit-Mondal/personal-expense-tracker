@@ -93,4 +93,4 @@ function validateCategory(category) {
 }
 
 
-module.exports = { createCategory, getCategories, getCategory,  updateCategory, removeCategory };
+module.exports = { createCategory, getCategories, getCategory,  updateCategory, removeCategory, Category };
