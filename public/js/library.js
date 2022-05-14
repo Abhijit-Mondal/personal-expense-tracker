@@ -4,7 +4,8 @@ class FetchRequests {
         const response = await fetch(url, {
             method: "DELETE",
             headers: {
-                "Content-type": "application/json"
+                "Content-type": "application/json",
+                "credentials": "same-origin"
             }
         });
 
