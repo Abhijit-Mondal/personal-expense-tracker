@@ -5,7 +5,7 @@ class FetchRequests {
             method: "DELETE",
             headers: {
                 "Content-type": "application/json",
-                "credentials": "same-origin"
+                "credentials": "cross-origin"
             }
         });
 
