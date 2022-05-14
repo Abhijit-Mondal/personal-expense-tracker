@@ -1,5 +1,5 @@
 
-const deleteExpenseBtns = document.getElementsByClassName("deleteExpense");
+const deleteExpenseBtns = document.querySelectorAll(".deleteExpenseBtn");
 
 
 const fetchRequests = new FetchRequests();
@@ -7,13 +7,12 @@ const fetchRequests = new FetchRequests();
 
 for (let deleteBtn of deleteExpenseBtns) {
 
-    deleteBtn.addEventListener("click", (evt) => {
-        // evt.preventDefault();
+    deleteBtn.addEventListener("click", async (evt) => {
+        evt.preventDefault();
         let id = evt.target.id;
-        console.log(evt.target);
         let baseurl = evt.target.attributes.baseurl.value;
         let deleteUrl = `${baseurl}/${id}`;
-        fetchRequests.deleteResource(deleteUrl)
+        await fetchRequests.deleteResource(deleteUrl)
             .then(resultData => {
                 console.log(resultData);
                 location.reload();

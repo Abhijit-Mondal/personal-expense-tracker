@@ -8,11 +8,10 @@
                 <h4><%= expense.category.name %></h4>
                 <h6>&#8377 <%= expense.amount %></h6>
                 <h6><%= expense.date.toString() %></h6>
-                <button id="<%=expense._id%>" baseurl="<%=baseurl%>" class="deleteExpense">
-                    <!-- <span class="material-symbols-outlined">
+                <button id="<%=expense._id%>" baseurl="<%=baseurl%>" class="deleteExpenseBtn">
+                    <span class="material-symbols-outlined">
                         delete_forever
-                    </span> -->
-                    DELETE
+                    </span>
                 </button>
             </div>
         <% }); %>

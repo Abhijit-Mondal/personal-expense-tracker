@@ -87,9 +87,18 @@ body{
     margin: auto;
 }
 
-.deleteExpense span{
+.deleteExpenseBtn {
+    background-color: #000;
+}
+
+.deleteExpenseBtn span{
     color: rgb(255, 0, 0);
     padding: 0;
+}
+
+/* Important Fix */
+.deleteExpenseBtn > * {
+    pointer-events: none;
 }
 
 
