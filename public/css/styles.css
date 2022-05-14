@@ -89,6 +89,7 @@ body{
 
 .deleteExpenseBtn {
     background-color: #000;
+    color: #fff;
 }
 
 .deleteExpenseBtn span{
