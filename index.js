@@ -28,14 +28,12 @@ app.use(
   contentSecurityPolicy({
     useDefaults: true,
     directives: {
-        defaultSrc: ["'self'", "fonts.googleapis.com", "fonts.sandbox.google.com", "fonts.gstatic.com"],
-        scriptSrc: ["'self'", "fonts.googleapis.com", "fonts.sandbox.google.com", "fonts.gstatic.com"],
-        fontSrc: [
-            "'self'",
-            'fonts.googleapis.com',
-            'themes.googleusercontent.com',
-            'fonts.gstatic.com'
-        ],
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'"],
+        fontSrc: ["'self'", "*"],
+        styleSrc: [ "'self'", "https://*.googleapis.com", "'unsafe-inline'" ],
+        connectSrc: ["'self'",  "*"],
+        imgSrc : ["'self'",  "*"],
         objectSrc: ["'none'"],
         upgradeInsecureRequests: [],
     },
