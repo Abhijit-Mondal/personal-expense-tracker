@@ -22,20 +22,26 @@ app.use(logger);
 app.use(authenticator);
 app.use(helmet());
 
-// const contentSecurityPolicy = require("helmet-csp");
+const contentSecurityPolicy = require("helmet-csp");
 
-// app.use(
-//   contentSecurityPolicy({
-//     useDefaults: true,
-//     directives: {
-//       defaultSrc: ["'self'", "default.example"],
-//       scriptSrc: ["'self'", "fonts.googleapis.com"],
-//       objectSrc: ["'none'"],
-//       upgradeInsecureRequests: [],
-//     },
-//     reportOnly: false,
-//   })
-// );
+app.use(
+  contentSecurityPolicy({
+    useDefaults: true,
+    directives: {
+        defaultSrc: ["'self'", "default.example"],
+        scriptSrc: ["'self'", "fonts.googleapis.com"],
+        fontSrc: [
+            "'self'",
+            'fonts.googleapis.com',
+            'themes.googleusercontent.com',
+            'fonts.gstatic.com'
+        ],
+        objectSrc: ["'none'"],
+        upgradeInsecureRequests: [],
+    },
+    reportOnly: false,
+  })
+);
 
 
 if (process.env.NODE_ENV === "development") {
