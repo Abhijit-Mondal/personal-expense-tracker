@@ -14,6 +14,7 @@ for (let deleteBtn of deleteExpenseBtns) {
         fetchRequests.deleteResource(deleteUrl)
             .then(resultData => {
                 console.log(resultData);
+                alert("Deleted!");
                 location.reload();
             })
             .catch(error => console.error(error));
