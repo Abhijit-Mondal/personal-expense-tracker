@@ -31,7 +31,7 @@ app.use(
         defaultSrc: ["'self'"],
         scriptSrc: ["'self'"],
         fontSrc: ["'self'", "*"],
-        styleSrc: [ "'self'", "https://*.googleapis.com", "'unsafe-inline'" ],
+        styleSrc: [ "'self'", "*" ],
         connectSrc: ["'self'",  "*"],
         imgSrc : ["'self'",  "*"],
         objectSrc: ["'none'"],
