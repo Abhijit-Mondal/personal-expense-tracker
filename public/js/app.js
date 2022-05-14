@@ -8,8 +8,9 @@ const fetchRequests = new FetchRequests();
 for (let deleteBtn of deleteExpenseBtns) {
 
     deleteBtn.addEventListener("click", (evt) => {
-        evt.preventDefault();
+        // evt.preventDefault();
         let id = evt.target.id;
+        console.log(evt.target);
         let baseurl = evt.target.attributes.baseurl.value;
         let deleteUrl = `${baseurl}/${id}`;
         fetchRequests.deleteResource(deleteUrl)
